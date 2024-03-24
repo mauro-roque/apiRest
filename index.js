@@ -3,11 +3,10 @@ const app = express();
 const port = "3000"
 const conexao = require("./infraestrutura/conexao");
 const tabelas = require("./infraestrutura/tabelas")
-
-tabelas.init(conexao);
-
 const router = require("./routers/index")
-router(app);
+
+router(app, express);
+tabelas.init(conexao);
 
 app.listen(port, (error) => {
     if(error){
@@ -16,8 +15,3 @@ app.listen(port, (error) => {
     }
     console.log("Subiu show");
 });
-
-
-
-
-

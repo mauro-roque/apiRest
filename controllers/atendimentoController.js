@@ -1,15 +1,16 @@
+const atendimentoModel = require("../models/atendimentoModel");
 class AtendimentoController{
     buscar(){
-        return "Buscando atendimentos. . . .";
+        return AtendimentoModel.listar();
     }
-    criar(){
-        return "Criando atendimento. . . .";
+    criar(novoAtendimento){
+        return  AtendimentoModel.criar(novoAtendimento);
     }
-    atualizar(id){
-        return "Alterando atendimento numero " + id + ". . .";
+    atualizar(atendimentoAtualizado,id){
+        return atendimentoModel.atualizar(atendimentoAtualizado, id);
     }
     deletar(id){
-        return "Deletando atendimento numero " + id + ". . .";
+        return atendimentoModel.delete(id);
     }
 }
 
